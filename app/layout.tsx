@@ -8,7 +8,7 @@ export default function RootLayout ({
 }>) {
   return (
     <html lang='en'>
-      <body>
+      <body id='home'>
         <MainSection />
         {children}
         <footer>footer</footer>

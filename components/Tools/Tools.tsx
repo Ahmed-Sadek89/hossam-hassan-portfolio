@@ -25,11 +25,11 @@ const Tools = () => {
         {tools.map((tool, index) => (
           <div
             key={index}
-            className='flex flex-col items-center shadow-lg rounded-lg overflow-hidden'
+            className='group flex flex-col items-center shadow-lg rounded-lg overflow-hidden'
           >
-            <div className={`flex justify-center items-center w-full  `}>
+            <div className={`flex justify-center items-center w-full  h-[200px] overflow-hidden`}>
               <div
-                className={` bg-cover bg-center rounded-t-lg w-full h-[200px] `}
+                className={` bg-cover bg-center rounded-t-lg w-full h-[200px] scale-100 transition duration-300 group-hover:scale-105`}
                 style={{
                   backgroundImage: `url(/tool${index + 1}.png)`,
                   backgroundColor: `${
@@ -38,7 +38,7 @@ const Tools = () => {
                 }}
               />
             </div>
-            <div className='flex justify-center items-center bg-[#004720] w-full h-[72px]'>
+            <div className='flex justify-center items-center bg-[#004720] group-hover:bg-white w-full h-[72px] group-hover:text-[#004720] transition duration-300'>
               <h2>{tool}</h2>
             </div>
           </div>

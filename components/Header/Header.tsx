@@ -1,10 +1,47 @@
+'use client'
+import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import React from 'react'
 
 const Header = () => {
+  const [scrolled, setScrolled] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 0)
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+  const navLinks = [
+    { name: 'Home', href: '#home' },
+    { name: 'My Experience', href: '#experience' },
+    { name: 'About', href: '#about' },
+    { name: 'Portfolio', href: '#portfolio' },
+    { name: 'Contact', href: '#contact' }
+  ]
+  const [activeLink, setActiveLink] = useState(window.location.hash)
+  const socialLinks = [
+    {
+      name: 'linkedin',
+      href: 'https://www.linkedin.com/in/hossam-halawa17011999?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app'
+    },
+    {
+      name: 'twitter',
+      href: '#'
+    },
+    {
+      name: 'instagram',
+      href: '#'
+    }
+  ]
   return (
-    <header className='bg-[#1A1A1A80] shadow-md py-7'>
+    <header
+      className={`top-0 fixed shadow-md py-7 w-full z-[9999] transition-colors duration-300 ${
+        scrolled ? 'bg-[#1A1A1A]' : 'bg-[#1A1A1A80]'
+      }`}
+    >
       <div className='container'>
         <div className='flex justify-between items-center w-full'>
           <Image
@@ -15,71 +52,36 @@ const Header = () => {
             className='object-contain'
           />
           <div className='flex items-center gap-x-4 p-2 border border-primary rounded-full'>
-            <Link
-              href={'#'}
-              className='bg-primary px-[40px] py-[20px] rounded-full text-[20px] text-white'
-            >
-              Home
-            </Link>
-            <Link
-              href={'#'}
-              className='hover:bg-[#3B395280] px-[40px] py-[20px] rounded-full text-[20px] text-white transition duration-300'
-            >
-              My Experience
-            </Link>
-            <Link
-              href={'#'}
-              className='hover:bg-[#3B395280] px-[40px] py-[20px] rounded-full text-[20px] text-white transition duration-300'
-            >
-              About
-            </Link>
-            <Link
-              href={'#'}
-              className='hover:bg-[#3B395280] px-[40px] py-[20px] rounded-full text-[20px] text-white transition duration-300'
-            >
-              Protfolio
-            </Link>
-            <Link
-              href={'#'}
-              className='hover:bg-[#3B395280] px-[40px] py-[20px] rounded-full text-[20px] text-white transition duration-300'
-            >
-              Contact
-            </Link>
+            {navLinks.map((link, index) => (
+              <Link
+                key={index}
+                href={link.href}
+                onClick={() => setActiveLink(link.href)}
+                className={`${
+                  activeLink === link.href
+                    ? 'bg-primary text-white'
+                    : 'hover:bg-[#3B395280] text-white'
+                } px-[40px] py-[20px] rounded-full text-[20px] transition duration-300`}
+              >
+                {link.name}
+              </Link>
+            ))}
           </div>
           <div className='flex items-center gap-x-4'>
-            <Link
-              href={'#'}
-              className='flex justify-center items-center bg-[#3B395280] rounded-full w-[42px] h-[42px]'
-            >
-              <Image
-                src={'/linkedin.svg'}
-                alt='linkedin'
-                width={20}
-                height={20}
-              />
-            </Link>
-            <Link
-              href={'#'}
-              className='flex justify-center items-center bg-[#3B395280] rounded-full w-[42px] h-[42px]'
-            >
-              <Image
-                src={'/twitter.svg'}
-                alt='twitter'
-                width={20}
-                height={20}
-              />
-            </Link>
-            <Link
-              href={'#'}
-              className='flex justify-center items-center bg-[#3B395280] rounded-full w-[42px] h-[42px]'
-            >
-              <Image
-                src={'/instagram.svg'}
-                alt='instagram'
-                width={20}
-                height={20}
-              />
-            </Link>
+            {socialLinks.map((social, index) => (
+              <Link
+                key={index}
+                href={social.href}
+                className='flex justify-center items-center bg-[#3B395280] hover:bg-primary rounded-full w-[42px] h-[42px] transition duration-300'
+              >
+                <Image
+                  src={`/${social.name}.svg`}
+                  alt={social.name}
+                  width={20}
+                  height={20}
+                />
+              </Link>
+            ))}
           </div>
         </div>
       </div>

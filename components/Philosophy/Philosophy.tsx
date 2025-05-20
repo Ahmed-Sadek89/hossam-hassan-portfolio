@@ -3,7 +3,7 @@ import React from 'react'
 
 const Philosophy = () => {
   return (
-    <section className='space-y-5 py-20 container'>
+    <section className='space-y-5 py-20 container' id="philosophy">
       <Image
         src={'/analysis.svg'}
         alt='analysis'

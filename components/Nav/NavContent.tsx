@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React from 'react'
 
 const NavContent = () => {
@@ -17,7 +18,12 @@ const NavContent = () => {
           focus on advancing methodologies for performance evaluation and
           decision-making support
         </p>
-        <button className='py-[16px] border border-[#9C9C9C] rounded-md w-[278px] text-[25px]'>Read More</button>
+        <Link
+          href={'#philosophy'}
+          className='hover:bg-primary py-[16px] border border-[#9C9C9C] hover:border-primary rounded-md w-[278px] text-[25px] hover:text-white text-center transition duration-300'
+        >
+          Read More
+        </Link>
       </div>
     </div>
   )

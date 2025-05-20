@@ -5,6 +5,7 @@ import React from 'react'
 const Work = () => {
   return (
     <div
+      id='portfolio'
       className='items-center grid grid-cols-3 bg-cover bg-no-repeat bg-center w-full h-[458px] overflow-hidden text-white'
       style={{
         backgroundImage: `linear-gradient(rgba(17, 17, 17, 0.9), rgba(17, 17, 17, 0.9)), url("/work1.png")`

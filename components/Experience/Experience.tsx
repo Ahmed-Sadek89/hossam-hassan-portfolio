@@ -12,7 +12,7 @@ const Experience = () => {
     'Washington FC - Analyst'
   ]
   return (
-    <section className='space-y-5 py-20 container'>
+    <section className='space-y-5 py-20 container' id="experience">
       <Image
         src={'/experience.svg'}
         alt='experience'
@@ -24,7 +24,7 @@ const Experience = () => {
         {[1, 2, 3, 4, 5, 6, 7].map((item, index) => (
           <div
             key={index}
-            className='group flex flex-col justify-center items-center gap-y-5 bg-white py-2 rounded-md w-full h-[300px] text-[#121212]'
+            className='group flex flex-col justify-center items-center gap-y-5 bg-white hover:bg-primary shadow-md hover:shadow-xl py-2 rounded-md w-full h-[300px] text-[#121212] hover:text-[#121212] transition duration-300'
           >
             <Image
               src={`/ex${item}.png`}

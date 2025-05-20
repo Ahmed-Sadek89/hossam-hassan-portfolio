@@ -4,7 +4,7 @@ import Nav from '../Nav/Nav'
 
 const MainSection = () => {
   return (
-    <section className="bg-[url('/main-bg.svg')] text-custom-primary text-white">
+    <section className="bg-[url('/main-bg.svg')] h-full text-custom-primary text-white">
       <Header />
       <Nav />
     </section>
