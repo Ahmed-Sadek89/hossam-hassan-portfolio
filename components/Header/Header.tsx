@@ -2,10 +2,16 @@
 import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { navLinks, socialLinks } from './static'
+import MobileLinks from './MobileLinks'
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false)
+  const [activeLink, setActiveLink] = useState('')
+  const [menuOpen, setMenuOpen] = useState(false)
 
+  const handleActiveLink = (prop: string) => setActiveLink(prop)
+  const handleMenuOpen = (prop: boolean) => setMenuOpen(prop)
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 0)
@@ -14,35 +20,20 @@ const Header = () => {
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
-  const navLinks = [
-    { name: 'Home', href: '#home' },
-    { name: 'My Experience', href: '#experience' },
-    { name: 'About', href: '#about' },
-    { name: 'Portfolio', href: '#portfolio' },
-    { name: 'Contact', href: '#contact' }
-  ]
-  const [activeLink, setActiveLink] = useState(window.location.hash)
-  const socialLinks = [
-    {
-      name: 'linkedin',
-      href: 'https://www.linkedin.com/in/hossam-halawa17011999?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app'
-    },
-    {
-      name: 'twitter',
-      href: '#'
-    },
-    {
-      name: 'instagram',
-      href: '#'
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setActiveLink(window.location.hash || '#home')
     }
-  ]
+  }, [])
+
   return (
     <header
-      className={`top-0 fixed shadow-md py-7 w-full z-[9999] transition-colors duration-300 ${
+      className={`top-0 fixed shadow-md py-4 w-full z-[9999] transition-colors duration-300 ${
         scrolled ? 'bg-[#1A1A1A]' : 'bg-[#1A1A1A80]'
       }`}
     >
-      <div className='container'>
+      <div className='mx-auto px-4 container'>
         <div className='flex justify-between items-center w-full'>
           <Image
             src={'/logo.svg'}
@@ -51,7 +42,27 @@ const Header = () => {
             height={100}
             className='object-contain'
           />
-          <div className='flex items-center gap-x-4 p-2 border border-primary rounded-full'>
+
+          <button
+            onClick={() => setMenuOpen(!menuOpen)}
+            className='lg:hidden text-white'
+          >
+            <svg
+              className='w-8 h-8'
+              fill='none'
+              stroke='currentColor'
+              strokeWidth='2'
+              viewBox='0 0 24 24'
+            >
+              <path
+                strokeLinecap='round'
+                strokeLinejoin='round'
+                d='M4 6h16M4 12h16M4 18h16'
+              />
+            </svg>
+          </button>
+
+          <div className='hidden lg:flex items-center gap-x-4 p-2 border border-primary rounded-full'>
             {navLinks.map((link, index) => (
               <Link
                 key={index}
@@ -61,13 +72,14 @@ const Header = () => {
                   activeLink === link.href
                     ? 'bg-primary text-white'
                     : 'hover:bg-[#3B395280] text-white'
-                } px-[40px] py-[20px] rounded-full text-[20px] transition duration-300`}
+                } px-[20px] py-[10px] rounded-full text-[16px] transition duration-300`}
               >
                 {link.name}
               </Link>
             ))}
           </div>
-          <div className='flex items-center gap-x-4'>
+
+          <div className='hidden lg:flex items-center gap-x-4'>
             {socialLinks.map((social, index) => (
               <Link
                 key={index}
@@ -84,6 +96,14 @@ const Header = () => {
             ))}
           </div>
         </div>
+
+        {menuOpen && (
+          <MobileLinks
+            activeLink={activeLink}
+            handleActiveLink={handleActiveLink}
+            handleMenuOpen={handleMenuOpen}
+          />
+        )}
       </div>
     </header>
   )

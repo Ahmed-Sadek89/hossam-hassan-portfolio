@@ -12,6 +12,7 @@ const Tools = () => {
     'Opta',
     'kinovea'
   ]
+
   return (
     <section className='space-y-5 py-20 container'>
       <Image
@@ -21,15 +22,16 @@ const Tools = () => {
         height={100}
         className='object-fill'
       />
-      <div className='items-center gap-x-10 gap-y-6 grid grid-cols-3'>
+
+      <div className='gap-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3'>
         {tools.map((tool, index) => (
           <div
             key={index}
-            className='group flex flex-col items-center shadow-lg rounded-lg overflow-hidden'
+            className='group flex flex-col items-center shadow-lg rounded-lg overflow-hidden transition duration-300'
           >
-            <div className={`flex justify-center items-center w-full  h-[200px] overflow-hidden`}>
+            <div className='flex justify-center items-center w-full h-[180px] md:h-[200px] overflow-hidden'>
               <div
-                className={` bg-cover bg-center rounded-t-lg w-full h-[200px] scale-100 transition duration-300 group-hover:scale-105`}
+                className='bg-cover bg-center rounded-t-lg w-full h-full scale-100 group-hover:scale-105 transition duration-300'
                 style={{
                   backgroundImage: `url(/tool${index + 1}.png)`,
                   backgroundColor: `${
@@ -38,7 +40,8 @@ const Tools = () => {
                 }}
               />
             </div>
-            <div className='flex justify-center items-center bg-[#004720] group-hover:bg-white w-full h-[72px] group-hover:text-[#004720] transition duration-300'>
+
+            <div className='flex justify-center items-center bg-[#004720] group-hover:bg-white px-2 w-full h-[60px] md:h-[72px] text-[16px] text-white md:text-[18px] group-hover:text-[#004720] text-center transition duration-300'>
               <h2>{tool}</h2>
             </div>
           </div>
