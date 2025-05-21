@@ -1,13 +1,29 @@
+'use client'
 import React from 'react'
 import NavContent from './NavContent'
 import Image from 'next/image'
+import { motion } from 'framer-motion'
 
 const Nav = () => {
   return (
     <nav className='py-14 container'>
       <div className='items-center gap-y-10 grid grid-cols-1 lg:grid-cols-2 mt-[100px] w-full'>
         <NavContent />
-        <div className='group flex justify-center items-center w-full'>
+        <motion.div
+          initial={{ opacity: 0, x: 100 }}
+          animate={{
+            opacity: 1,
+            x: 0,
+            y: [0, -10, 0, 10, 0] // up and down movement
+          }}
+          transition={{
+            duration: 4, // total loop time
+            ease: 'easeInOut',
+            repeat: Infinity,
+            repeatType: 'loop'
+          }}
+          className='group flex justify-center items-center w-full'
+        >
           <div
             style={{
               background:
@@ -24,7 +40,7 @@ const Nav = () => {
               priority
             />
           </div>
-        </div>
+        </motion.div>
       </div>
     </nav>
   )
