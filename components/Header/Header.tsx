@@ -34,7 +34,7 @@ const Header = () => {
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: 'easeOut' }}
-      className={`top-0 fixed shadow-md py-4 w-full z-[9999] transition-colors duration-300 ${
+      className={`top-0 fixed shadow-md py-4 w-full z-[9990] transition-colors duration-300 ${
         scrolled ? 'bg-[#1A1A1A]' : 'bg-[#1A1A1A80]'
       }`}
     >

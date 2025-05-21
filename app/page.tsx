@@ -1,5 +1,6 @@
 import Experience from '@/components/Experience/Experience'
 import Philosophy from '@/components/Philosophy/Philosophy'
+import SelectedWorks from '@/components/SelectedWorks/SelectedWorks'
 import Tools from '@/components/Tools/Tools'
 import Work from '@/components/Work/Work'
 import { Metadata } from 'next'
@@ -22,6 +23,7 @@ export default function Home () {
       <Experience />
       <Work />
       <Tools />
+      <SelectedWorks />
     </main>
   )
 }
