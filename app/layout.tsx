@@ -8,7 +8,7 @@ export default function RootLayout ({
 }>) {
   return (
     <html lang='en'>
-      <body id='home'>
+      <body id='home' className='w-full overflow-x-hidden'>
         <MainSection />
         {children}
         <footer>footer</footer>
