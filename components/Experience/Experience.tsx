@@ -30,7 +30,7 @@ const Experience = () => {
         {[1, 2, 3, 4, 5, 6, 7].map((item, index) => (
           <div
             key={index}
-            className='group flex flex-col justify-center items-center gap-y-5 bg-white hover:bg-primary shadow-md hover:shadow-xl py-6 rounded-md text-[#121212] hover:text-[#121212] transition duration-300'
+            className='group flex flex-col justify-center items-center gap-y-5 bg-white hover:bg-primary shadow-md hover:shadow-xl py-6 rounded-md text-[#121212] hover:text-[#121212] hover:text-white transition duration-300'
           >
             <Image
               src={`/ex${item}.png`}
