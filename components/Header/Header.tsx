@@ -108,6 +108,7 @@ const Header = () => {
                 <Link
                   href={social.href}
                   className='flex justify-center items-center bg-[#3B395280] hover:bg-primary rounded-full w-[42px] h-[42px] transition duration-300'
+                target='_blank'
                 >
                   <Image
                     src={`/${social.name}.svg`}

@@ -23,7 +23,7 @@ const Tools = () => {
         className='object-fill'
       />
 
-      <div className='gap-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3'>
+      <div className='gap-6 grid grid-cols-2 lg:grid-cols-3'>
         {tools.map((tool, index) => (
           <div
             key={index}
@@ -33,7 +33,7 @@ const Tools = () => {
               <div
                 className='bg-cover bg-center rounded-t-lg w-full h-full scale-100 group-hover:scale-105 transition duration-300'
                 style={{
-                  backgroundImage: `url(/tool${index + 1}.png)`,
+                  backgroundImage: `url(/tool${ index + 1}.${'png'})`,
                   backgroundColor: `${
                     index === tools.length - 1 ? '#fff' : 'transparent'
                   }`,

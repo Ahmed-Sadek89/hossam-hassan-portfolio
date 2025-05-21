@@ -36,6 +36,7 @@ const MobileLinks = ({
         {socialLinks.map((social, index) => (
           <Link
             key={index}
+            target='_blank'
             href={social.href}
             className='flex justify-center items-center bg-[#3B395280] hover:bg-primary rounded-full w-[42px] h-[42px] transition duration-300'
           >
