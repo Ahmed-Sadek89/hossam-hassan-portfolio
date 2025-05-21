@@ -1,9 +1,10 @@
+import { Metadata } from 'next'
+import Contact from '@/components/Contact/Contact'
 import Experience from '@/components/Experience/Experience'
 import Philosophy from '@/components/Philosophy/Philosophy'
 import SelectedWorks from '@/components/SelectedWorks/SelectedWorks'
 import Tools from '@/components/Tools/Tools'
 import Work from '@/components/Work/Work'
-import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Hossam Hassan',
@@ -24,6 +25,7 @@ export default function Home () {
       <Work />
       <Tools />
       <SelectedWorks />
+      <Contact />
     </main>
   )
 }

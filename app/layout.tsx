@@ -11,7 +11,6 @@ export default function RootLayout ({
       <body id='home' className='w-full overflow-x-hidden'>
         <MainSection />
         {children}
-        <footer>footer</footer>
       </body>
     </html>
   )
