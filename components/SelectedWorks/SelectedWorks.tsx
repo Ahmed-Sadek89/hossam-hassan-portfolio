@@ -32,7 +32,7 @@ const SelectedWorks = () => {
             <VideoFrame key={index} videoUrl={vid.videoUrl} />
           ))}
         </WorkSectionCarousel>
-        <Scouting />
+        {/* <Scouting /> */}
         {/* <ImageWorksCarousel /> */}
         <WorkSectionCarousel media='image'>
           {[1, 2, 3, 4, 5, 6].map(card => (
