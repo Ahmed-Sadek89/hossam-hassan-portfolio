@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import React from 'react'
 import { videoSectionsData } from './data'
-import Scouting from './Scouting'
+// import Scouting from './Scouting'
 import VideoFrame from './VideoFrame'
 import WorkSectionCarousel from './WorkSectionCarousel'
 
