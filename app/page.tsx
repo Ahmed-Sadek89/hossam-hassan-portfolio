@@ -9,7 +9,7 @@ import Work from '@/components/Work/Work'
 export const metadata: Metadata = {
   title: 'Hossam Hassan',
   description:
-    "Hi, I'm Hossam Hassan  Football analyst specializing in identifying gaps within football tactical analysis and software tools, with a focus on advancing methodologies for performance evaluation and decision-making support",
+    "Hi, I'm Hossam from Egypt. I was born in January 1999. I am an engineer and a football analyst, currently working as a performance analyst. I hold the FA Coaching Level 1 certificate.",
   icons: {
     icon: '/logo.svg',
     shortcut: '/logo.svg',
