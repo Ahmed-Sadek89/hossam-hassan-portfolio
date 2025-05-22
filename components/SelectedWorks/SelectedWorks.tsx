@@ -37,6 +37,7 @@ const SelectedWorks = () => {
         <WorkSectionCarousel media='image'>
           {[1, 2, 3, 4, 5, 6].map(card => (
             <Image
+              key={card}
               src={`/slide${card}.png`}
               alt={'image-slider'}
               width={1000}

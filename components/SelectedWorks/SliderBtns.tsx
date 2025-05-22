@@ -7,11 +7,15 @@ type props = {
 }
 const SliderBtns = ({ sliderRef }: props) => {
   const handlePrev = () => {
-    sliderRef.current && sliderRef.current.slickPrev()
+    if (sliderRef.current) {
+      sliderRef.current.slickPrev()
+    }
   }
 
   const handleNext = () => {
-    sliderRef.current && sliderRef.current.slickNext()
+    if (sliderRef.current) {
+      sliderRef.current.slickNext()
+    }
   }
 
   return (
