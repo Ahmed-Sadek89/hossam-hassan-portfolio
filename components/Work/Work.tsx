@@ -54,7 +54,7 @@ const Work = () => {
       {/* Right Image */}
       <div className='w-full h-full'>
         <Image
-          src='/work2.png'
+          src='/work3.png'
           width={700}
           height={458}
           alt='Work example'
