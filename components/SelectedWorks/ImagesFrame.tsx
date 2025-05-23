@@ -21,6 +21,7 @@ const ImagesFrame = () => {
         const src = `/slide${card}.png`
         return (
           <Image
+          key={card}
             onClick={() => handleClick(src)}
             src={src}
             alt={`slide-${card}`}
