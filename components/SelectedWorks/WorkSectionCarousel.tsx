@@ -2,7 +2,7 @@
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
-import React, { useRef } from 'react'
+import React from 'react'
 import './style.css'
 import SliderBtns from './SliderBtns'
 import { imageCarouselSettings, videoCarouselSettings } from './data'
@@ -10,10 +10,9 @@ import { imageCarouselSettings, videoCarouselSettings } from './data'
 type props = {
   children: React.ReactNode
   media: 'video' | 'image'
+  sliderRef: React.RefObject<Slider | null>
 }
-const WorkSectionCarousel = ({ children, media }: props) => {
-  const sliderRef = useRef<Slider>(null)
-
+const WorkSectionCarousel = ({ children, media, sliderRef }: props) => {
   const settings =
     media === 'video' ? videoCarouselSettings : imageCarouselSettings
   return (

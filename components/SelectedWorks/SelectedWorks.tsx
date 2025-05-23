@@ -1,11 +1,14 @@
+"use client"
 import Image from 'next/image'
-import React from 'react'
+import React, { useRef } from 'react'
 import { videoSectionsData } from './data'
 // import Scouting from './Scouting'
 import VideoFrame from './VideoFrame'
 import WorkSectionCarousel from './WorkSectionCarousel'
+import Slider from 'react-slick'
 
 const SelectedWorks = () => {
+  const sliderRef = useRef<Slider>(null)
   return (
     <section className='space-y-10 py-16 container' id='philosophy'>
       <div className='space-y-1'>
@@ -24,17 +27,22 @@ const SelectedWorks = () => {
       <div className='space-y-10'>
         {videoSectionsData.map((section, index) => (
           <div className='hidden md:block w-full' key={index}>
-            <VideoFrame videoUrl={section.videoUrl} />
+            <VideoFrame videoUrl={section.videoUrl} sliderRef={sliderRef}imgBg={section.imgBg} />
           </div>
         ))}
-        <WorkSectionCarousel media='video'>
-          {videoSectionsData.map((vid, index) => (
-            <VideoFrame key={index} videoUrl={vid.videoUrl} />
+        <WorkSectionCarousel media='video' sliderRef={sliderRef}>
+          {videoSectionsData.map((section, index) => (
+            <VideoFrame
+              key={index}
+              videoUrl={section.videoUrl}
+              sliderRef={sliderRef}
+              imgBg={section.imgBg}
+            />
           ))}
         </WorkSectionCarousel>
         {/* <Scouting /> */}
-        {/* <ImageWorksCarousel /> */}
-        <WorkSectionCarousel media='image'>
+        <div className='md:hidden block' style={{marginBottom: "100px"}}/>
+        <WorkSectionCarousel media='image' sliderRef={sliderRef}>
           {[1, 2, 3, 4, 5, 6].map(card => (
             <Image
               key={card}

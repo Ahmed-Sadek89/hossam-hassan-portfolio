@@ -1,11 +1,15 @@
+import React from "react"
+
 export const videoSectionsData = [
   {
     videoUrl:
-      'https://drive.google.com/file/d/1YBeUXKFM6c3TwhuD01mOIQ8XB8DL_2w9/preview'
+      'https://drive.google.com/file/d/1YBeUXKFM6c3TwhuD01mOIQ8XB8DL_2w9/preview',
+      imgBg: '/v1.webp'
   },
   {
     videoUrl:
-      'https://drive.google.com/file/d/1LU_x7b5vIAqeaQ8IxP_kYlTjAEeE8rDl/preview'
+      "https://drive.google.com/file/d/1Kigzqex7qDwQ_ZlbmdJpKWhoFDhiWjLX/preview",
+      imgBg: '/v2.webp'
   }
 ]
 
@@ -60,9 +64,9 @@ const imageCarouselresponsive = [
     }
   }
 ]
- 
+
 export const videoCarouselSettings = {
- dots: false,
+  dots: true,
   arrows: false,
   infinite: true,
   slidesToShow: 1,
@@ -72,11 +76,15 @@ export const videoCarouselSettings = {
   autoplay: true,
   autoplaySpeed: 10000,
   cssEase: 'linear',
-  responsive: videoCarouselresponsive
+  centerMode: true,
+  centerPadding: '40px',
+  responsive: videoCarouselresponsive,
+   
 }
 
+
 export const imageCarouselSettings = {
- dots: false,
+  dots: false,
   arrows: false,
   infinite: true,
   slidesToShow: 3,
@@ -86,5 +94,7 @@ export const imageCarouselSettings = {
   autoplay: true,
   autoplaySpeed: 10000,
   cssEase: 'linear',
+  centerMode: true,
+  centerPadding: '40px', // Shows part of next/prev slides
   responsive: imageCarouselresponsive
 }

@@ -19,7 +19,7 @@ const SliderBtns = ({ sliderRef }: props) => {
   }
 
   return (
-    <div className='top-[40%] absolute flex flex-row justify-between items-center w-full'>
+    <div className='hidden top-[40%] absolute md:flex flex-row justify-between items-center w-full'>
       <button
         className='flex justify-center items-center bg-[#0A0A0A] hover:bg-[#0A0A0A4D] rounded-full w-[80px] h-[80px] transition duration-300 prev-arrow'
         onClick={handlePrev}
