@@ -27,7 +27,7 @@ const SelectedWorks = () => {
       <div className='space-y-10'>
         {videoSectionsData.map((section, index) => (
           <div className='hidden md:block w-full' key={index}>
-            <VideoFrame videoUrl={section.videoUrl} sliderRef={sliderRef}imgBg={section.imgBg} />
+            <VideoFrame videoUrl={section.videoUrl} imgBg={section.imgBg} />
           </div>
         ))}
         <WorkSectionCarousel media='video' sliderRef={sliderRef}>
@@ -35,7 +35,6 @@ const SelectedWorks = () => {
             <VideoFrame
               key={index}
               videoUrl={section.videoUrl}
-              sliderRef={sliderRef}
               imgBg={section.imgBg}
             />
           ))}

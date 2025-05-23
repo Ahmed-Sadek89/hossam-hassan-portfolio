@@ -1,21 +1,18 @@
 import * as Dialog from '@radix-ui/react-dialog'
 import { useState } from 'react'
 import Image from 'next/image'
-import Slider from 'react-slick'
 
 type Props = {
   videoUrl: string
-  sliderRef: React.RefObject<Slider | null>
   imgBg: string
 }
 
-const VideoFrame = ({ videoUrl, sliderRef,imgBg }: Props) => {
+const VideoFrame = ({ videoUrl, imgBg }: Props) => {
   const [open, setOpen] = useState(false)
 
   return (
     <Dialog.Root open={open} onOpenChange={(val) => {
       setOpen(val)
-      val ? sliderRef.current?.slickPause() : sliderRef.current?.slickPlay()
     }}>
       <div className='relative bg-black rounded-lg overflow-hidden'>
         <div className='relative pb-[56.25%] h-0'>
