@@ -1,4 +1,4 @@
-"use client"
+'use client'
 import React, { useState } from 'react'
 import Image from 'next/image'
 import * as Dialog from '@radix-ui/react-dialog'
@@ -17,26 +17,19 @@ const ImagesFrame = () => {
         if (!open) setSelectedImage(null)
       }}
     >
-      <div className='gap-4 grid grid-cols-2 md:grid-cols-3'>
-        {[1, 2, 3, 4, 5, 6].map(card => {
-          const src = `/slide${card}.png`
-          return (
-            <div
-              key={card}
-              onClick={() => handleClick(src)}
-              className='cursor-pointer'
-            >
-              <Image
-                src={src}
-                alt={`slide-${card}`}
-                width={1000}
-                height={400}
-                className='rounded-md object-contain scale-100 hover:scale-105 transition duration-300'
-              />
-            </div>
-          )
-        })}
-      </div>
+      {[1, 2, 3, 4, 5, 6].map(card => {
+        const src = `/slide${card}.png`
+        return (
+          <Image
+            onClick={() => handleClick(src)}
+            src={src}
+            alt={`slide-${card}`}
+            width={1000}
+            height={400}
+            className='rounded-md object-contain scale-100 hover:scale-105 transition duration-300 cursor-pointer'
+          />
+        )
+      })}
 
       <Dialog.Portal>
         <Dialog.Overlay className='z-50 fixed inset-0 bg-black/80' />
