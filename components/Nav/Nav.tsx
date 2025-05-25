@@ -36,7 +36,7 @@ const Nav = () => {
             className='flex justify-center items-center shadow-lg p-4 rounded-full w-[300px] md:w-[400px] lg:w-[500px] h-[300px] md:h-[400px] lg:h-[500px] scale-100 group-hover:scale-110 transition duration-300'
           >
             <Image
-              src='/hossam-hassan.jpg'
+              src='/hossam-hassan-2.jpg'
               alt='Hossam Hassan'
               width={460}
               height={460}

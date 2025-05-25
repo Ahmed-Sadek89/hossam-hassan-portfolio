@@ -36,9 +36,12 @@ const NavContent = () => {
 
       <div className='flex flex-col items-start gap-y-7 text-left'>
         <p className='font-light text-[#E4E3E3] text-[18px] md:text-[22px] lg:text-[25px]'>
-          Hi, I'm Hossam from Egypt. I was born in January 1999. I am an
-          engineer and a football analyst, currently working as a performance
-          analyst. I hold the FA Coaching Level 1 certificate.
+          Hi, I’m Hossam from Egypt. I was born in January 1999 and have an
+          engineering background beside my football analysis education and
+          knowledge. I currently work as a performance analyst, using both my
+          technical and data analysis skills along with a deep understanding of
+          the game to support teams on and off the pitch. I also hold the FA
+          Level 1 Coaching Certificate.
         </p>
 
         <motion.div whileHover={{ scale: 1.05 }}>

@@ -1,4 +1,4 @@
-"use client"
+'use client'
 import Image from 'next/image'
 import React, { useRef } from 'react'
 import { videoSectionsData } from './data'
@@ -40,18 +40,23 @@ const SelectedWorks = () => {
           ))}
         </WorkSectionCarousel>
         {/* <Scouting /> */}
-        <div className='md:hidden block' style={{marginBottom: "100px"}}/>
+        <div className='md:hidden block' style={{ marginBottom: '100px' }} />
         <WorkSectionCarousel media='image' sliderRef={sliderRef}>
-          {[1, 2, 3, 4, 5, 6].map(card => (
-            <Image
-              key={card}
-              src={`/slide${card}.png`}
-              alt={'image-slider'}
-              width={1000}
-              height={400}
-              className='rounded-md object-contain scale-100 hover:scale-105 transition duration-300'
-            />
-          ))}
+           
+          {[1, 2, 3, 4, 5, 6].map(card => {
+            const src = `/slide${card}.${card === 5 ? 'jpg' : 'png'}`
+            console.log({ src })
+            return (
+              <Image
+                key={card}
+                src={src}
+                alt={`slide-${card}`}
+                width={1000}
+                height={400}
+                className='rounded-md object-contain scale-100 hover:scale-105 transition duration-300'
+              />
+            )
+          })}
         </WorkSectionCarousel>
       </div>
     </section>

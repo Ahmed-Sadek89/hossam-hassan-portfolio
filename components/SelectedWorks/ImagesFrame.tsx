@@ -18,10 +18,11 @@ const ImagesFrame = () => {
       }}
     >
       {[1, 2, 3, 4, 5, 6].map(card => {
-        const src = `/slide${card}.png`
+        const src = `/slide${card}.${card === 5 ? 'jpg' : 'png'}`
+        console.log({src})
         return (
           <Image
-          key={card}
+            key={card}
             onClick={() => handleClick(src)}
             src={src}
             alt={`slide-${card}`}
