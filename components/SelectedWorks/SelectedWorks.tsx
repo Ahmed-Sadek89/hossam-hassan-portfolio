@@ -44,7 +44,7 @@ const SelectedWorks = () => {
         <WorkSectionCarousel media='image' sliderRef={sliderRef}>
            
           {[1, 2, 3, 4, 5, 6].map(card => {
-            const src = `/slide${card}.${card === 5 ? 'jpg' : 'png'}`
+            const src = `/slide${card}.${card === 5||card===1 ? 'jpg' : 'png'}`
             console.log({ src })
             return (
               <Image
@@ -53,7 +53,7 @@ const SelectedWorks = () => {
                 alt={`slide-${card}`}
                 width={1000}
                 height={400}
-                className='rounded-md object-contain scale-100 hover:scale-105 transition duration-300'
+                className='rounded-md w-[220px] h-[620px] object-fill scale-100 hover:scale-105 transition duration-300'
               />
             )
           })}
